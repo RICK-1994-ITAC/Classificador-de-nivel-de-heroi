@@ -9,7 +9,7 @@
 
 ## Objetivo
 
-Crie uma variável para armazenar o nome e a quantidade de experiência (XP) de um herói, depois utilize uma estrutura de decisão para apresentar alguma das mensagens abaixo:
+Crie uma variável para armazenar o nome e a quantidade de vitoria (XP) de um herói, depois utilize uma estrutura de decisão para apresentar alguma das mensagens abaixo:
 
 Se XP for menor do que 1.000 = Ferro
 Se XP for entre 1.001 e 2.000 = Bronze
@@ -25,18 +25,50 @@ Se XP for maior ou igual a 10.001 = Radiante
 Ao final deve se exibir uma mensagem:
 "O Herói de nome **{nome}** está no nível de **{nivel}** */
 
+/*------------------------------Primeiro desafio--------------------------------------*/
+
+// let heroi = ['SpiderMan', 8000]
+// let [nome,vitoria]= heroi
+// let nivel;
+// console.log(vitoria);
+
+// if (vitoria <= 1000) nivel = 'Ferro';
+// if (vitoria >=1001 && vitoria <= 2000) nivel = 'Bronze';
+// if (vitoria >= 2001 && vitoria <= 5000) nivel = 'Prata';
+// if (vitoria >=5001 && vitoria <= 7000) nivel = 'Ouro';
+// if (vitoria >=7001 && vitoria <= 8000) nivel = 'Platina';
+// if (vitoria >=8001 && vitoria <= 9000) nivel = 'Ascendente';
+// if (vitoria >=9001 && vitoria <= 10000) nivel = 'Épico';
+// if (vitoria > 10000) nivel = 'Radiante';
+
+// console.log(`O Herói de nome ${nome}, está no nível de ${nivel}`);
+
+/*----------------------------------------------------------------------------------- */
+
+/*Segundo desafio */
+
 let heroi = ['SpiderMan', 8000]
-let [nome,experiência]= heroi
-let nivel;
-console.log(experiência);
+let [nome_heroi,numero_vitorias]= heroi
+let nivel_heroi;
 
-if (experiência <= 1000) nivel = 'Ferro';
-if (experiência >=1001 && experiência <= 2000) nivel = 'Bronze';
-if (experiência >= 2001 && experiência <= 5000) nivel = 'Prata';
-if (experiência >=5001 && experiência <= 7000) nivel = 'Ouro';
-if (experiência >=7001 && experiência <= 8000) nivel = 'Platina';
-if (experiência >=8001 && experiência <= 9000) nivel = 'Ascendente';
-if (experiência >=9001 && experiência <= 10000) nivel = 'Épico';
-if (experiência > 10000) nivel = 'Radiante';
+function numeroVitorias(nome,vitoria,nivel) {
+    
+    if (vitoria <= 10) nivel = 'Ferro';
+    if (vitoria >=1001 && vitoria <= 20) nivel = 'Bronze';
+    if (vitoria >= 2001 && vitoria <= 50) nivel = 'Prata';
+    if (vitoria >=5001 && vitoria <= 70) nivel = 'Ouro';
+    if (vitoria >=7001 && vitoria <= 80) nivel = 'Platina';
+    if (vitoria >=8001 && vitoria <= 90) nivel = 'Ascendente';
+    if (vitoria >=9001 && vitoria <= 100) nivel = 'Épico';
+    if (vitoria > 250) nivel = 'Radiante';
+    
+    console.log(msgVitoria(nome,vitoria,nivel))
 
-console.log(`O Herói de nome ${nome}, está no nível de ${nivel}`);
+}
+
+function msgVitoria(nome,vitoria,nivel){
+    return (`O Herói de nome ${nome} tem ${vitoria} vitórias e está no nível ${nivel}`);
+}
+
+numeroVitorias(nome_heroi,numero_vitorias, nivel_heroi);
+
